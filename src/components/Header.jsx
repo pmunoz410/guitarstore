@@ -1,16 +1,11 @@
-import { useMemo } from "react";
-
-function Header({cart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart}) {
-
-    const isEmpty = useMemo(() => cart.length === 0, [cart])
-    const cartTotal = useMemo(() => cart.reduce((total, item) => total + (item.quantity * item.price), 0), [cart])
+function Header({cart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, isEmpty, cartTotal}) {
 
     return (
         <header className="py-5 header">
             <div className="container-xl">
                 <div className="row justify-content-center justify-content-md-between">
                     <div className="col-8 col-md-3">
-                        <a href="index.html">
+                        <a href="/">
                             <img className="img-fluid" src="/img/logo.svg" alt="imagen logo"/>
                         </a>
                     </div>
